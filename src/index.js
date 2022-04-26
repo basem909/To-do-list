@@ -13,3 +13,7 @@ pageContainer.appendChild(input);
 input.setAttribute('type','text');
 input.setAttribute('placeholder', "add to your list");
 pageContainer.appendChild(list);
+const remove = document.createElement('a');
+remove.setAttribute('href','#');
+remove.textContent = 'Clear all completed'
+pageContainer.appendChild(remove)
