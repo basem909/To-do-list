@@ -1,15 +1,8 @@
 import _ from 'lodash';
-import "./index.css";
+import './index.css';
 
-function component() {
-  const element = document.createElement("div");
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
-
-
-  return element;
-}
-
-document.body.appendChild(component());
+let tasks = [
+  { index: 0, description: 'complete today project', completed: false },
+  { index: 1, description: 'wash the laundry', completed: false },
+  { index: 2, description: 'change the bed sheets', completed: false },
+];
