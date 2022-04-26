@@ -14,7 +14,7 @@ body {
   width: 50vw;
   margin-top: 10%;
   column-width: auto;
-  border: 1px solid black;
+  border: 4px groove #f1f2f5;
 }
 
 h1 {
