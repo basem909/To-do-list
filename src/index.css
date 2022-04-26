@@ -10,7 +10,7 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  height: auto;
   width: 50vw;
   margin-top: 10%;
   column-width: auto;
