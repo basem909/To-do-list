@@ -1,8 +1,15 @@
 import _ from 'lodash';
 import './index.css';
+import './iteration.js';
+import { list } from './iteration.js';
 
-let tasks = [
-  { index: 0, description: 'complete today project', completed: false },
-  { index: 1, description: 'wash the laundry', completed: false },
-  { index: 2, description: 'change the bed sheets', completed: false },
-];
+
+const pageContainer = document.querySelector('.page-container');
+const title = document.createElement('h1');
+title.textContent = `Today's To Do`;
+pageContainer.appendChild(title);
+const input = document.createElement('input');
+pageContainer.appendChild(input);
+input.setAttribute('type','text');
+input.setAttribute('placeholder', "add to your list");
+pageContainer.appendChild(list);

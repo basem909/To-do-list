@@ -1,10 +1,18 @@
-.hello {
-  color: red;
-  background-color: azure;
-}
 body {
   display: flex;
+  background-color: lightgray;
   flex-direction: column;
-  background-color: aqua;
   align-items: center;
+  justify-content: center;
+}
+
+.page-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+  margin-top: 10%;
 }
