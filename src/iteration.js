@@ -1,8 +1,4 @@
-export const tasks = [
-  { index: 0, dicr: 'complete today project', completed: false },
-  { index: 1, dicr: 'wash the laundry', completed: false },
-  { index: 2, dicr: 'change the bed sheets', completed: false },
-];
+export const tasks = [];
 export const list = document.createElement('ul');
 list.classList.add('todo-container');
 export function listItem() {
