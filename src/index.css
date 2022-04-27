@@ -61,3 +61,7 @@ a {
   align-content: center;
   padding: 2vw;
 }
+
+.none {
+  display: none;
+}
