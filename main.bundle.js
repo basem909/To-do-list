@@ -125,7 +125,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"list\": () => (/* binding */ list),\n/* harmony export */   \"listItem\": () => (/* binding */ listItem),\n/* harmony export */   \"tasks\": () => (/* binding */ tasks)\n/* harmony export */ });\nconst tasks = [\n  { index: 0, dicr: 'complete today project', completed: false },\n  { index: 1, dicr: 'wash the laundry', completed: false },\n  { index: 2, dicr: 'change the bed sheets', completed: false },\n];\nconst list = document.createElement('ul');\nlist.classList.add('todo-container');\nfunction listItem() {\n  for (let i = 0; i < tasks.length; i += 1) {\n    list.innerHTML += `<li class='list-item'>${tasks[i].dicr}</li>`;\n  }\n  return list;\n}\nlistItem();\n\n\n//# sourceURL=webpack://webpack-template/./src/iteration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"list\": () => (/* binding */ list),\n/* harmony export */   \"listItem\": () => (/* binding */ listItem),\n/* harmony export */   \"tasks\": () => (/* binding */ tasks)\n/* harmony export */ });\nconst tasks = [];\nconst list = document.createElement('ul');\nlist.classList.add('todo-container');\nfunction listItem() {\n  for (let i = 0; i < tasks.length; i += 1) {\n    list.innerHTML += `<li class='list-item'>${tasks[i].dicr}</li>`;\n  }\n  return list;\n}\nlistItem();\n\n\n//# sourceURL=webpack://webpack-template/./src/iteration.js?");
 
 /***/ })
 
