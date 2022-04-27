@@ -109,13 +109,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/add.js":
+/*!********************!*\
+  !*** ./src/add.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTask\": () => (/* binding */ addTask),\n/* harmony export */   \"input\": () => (/* binding */ input),\n/* harmony export */   \"tasks\": () => (/* binding */ tasks)\n/* harmony export */ });\n/* harmony import */ var _iteration_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./iteration.js */ \"./src/iteration.js\");\n\nconst tasks = [];\nconst input = document.createElement(\"input\");\n\nconst addTask = (e) => {\n  if (e.key === \"Enter\") {\n    let f = {\n      index: tasks.length,\n      description: input.value,\n      completed: false,\n    };\n\n    tasks.push(f);\n    console.log(tasks);\n    (0,_iteration_js__WEBPACK_IMPORTED_MODULE_0__.listItem)();\n    input.value = '';\n  }\n};\n\n\n//# sourceURL=webpack://webpack-template/./src/add.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _iteration_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iteration.js */ \"./src/iteration.js\");\n\n\n\nconst pageContainer = document.querySelector('.page-container');\nconst title = document.createElement('h1');\ntitle.textContent = 'Today\\'s To Do';\npageContainer.appendChild(title);\nconst input = document.createElement('input');\npageContainer.appendChild(input);\ninput.setAttribute('type', 'text');\ninput.setAttribute('placeholder', 'add to your list...');\npageContainer.appendChild(_iteration_js__WEBPACK_IMPORTED_MODULE_1__.list);\nconst remove = document.createElement('a');\nremove.setAttribute('href', '#');\nremove.textContent = 'Clear all completed';\npageContainer.appendChild(remove);\n\n//# sourceURL=webpack://webpack-template/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _iteration_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iteration.js */ \"./src/iteration.js\");\n/* harmony import */ var _add_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add.js */ \"./src/add.js\");\n\n\n\n\n\nconst pageContainer = document.querySelector('.page-container');\nconst title = document.createElement('h1');\ntitle.textContent = 'Today\\'s To Do';\npageContainer.appendChild(title);\npageContainer.appendChild(_add_js__WEBPACK_IMPORTED_MODULE_2__.input);\n_add_js__WEBPACK_IMPORTED_MODULE_2__.input.setAttribute('type', 'text');\n_add_js__WEBPACK_IMPORTED_MODULE_2__.input.setAttribute('placeholder', 'add to your list...');\npageContainer.appendChild(_iteration_js__WEBPACK_IMPORTED_MODULE_1__.list);\nconst remove = document.createElement('a');\nremove.setAttribute('href', '#');\nremove.textContent = 'Clear all completed';\npageContainer.appendChild(remove);\n\nwindow.addEventListener(\"keypress\", _add_js__WEBPACK_IMPORTED_MODULE_2__.addTask);\n\n//# sourceURL=webpack://webpack-template/./src/index.js?");
 
 /***/ }),
 
@@ -125,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"list\": () => (/* binding */ list),\n/* harmony export */   \"listItem\": () => (/* binding */ listItem),\n/* harmony export */   \"tasks\": () => (/* binding */ tasks)\n/* harmony export */ });\nconst tasks = [];\nconst list = document.createElement('ul');\nlist.classList.add('todo-container');\nfunction listItem() {\n  for (let i = 0; i < tasks.length; i += 1) {\n    list.innerHTML += `<li class='list-item'>${tasks[i].dicr}</li>`;\n  }\n  return list;\n}\nlistItem();\n\n\n//# sourceURL=webpack://webpack-template/./src/iteration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"list\": () => (/* binding */ list),\n/* harmony export */   \"listItem\": () => (/* binding */ listItem)\n/* harmony export */ });\n/* harmony import */ var _add_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add.js */ \"./src/add.js\");\nconst list = document.createElement('ul');\n\nlist.classList.add('todo-container');\nfunction listItem() {\n  list.innerHTML = \"\";\n  for (let i = 0; i < _add_js__WEBPACK_IMPORTED_MODULE_0__.tasks.length; i += 1) {\n    list.innerHTML += `<li class='list-item'>${_add_js__WEBPACK_IMPORTED_MODULE_0__.tasks[i].description}</li>`;\n  }\n  return list;\n}\nlistItem();\n\n\n//# sourceURL=webpack://webpack-template/./src/iteration.js?");
 
 /***/ })
 
