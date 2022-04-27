@@ -1,11 +1,12 @@
 import './index.css';
-import { list } from './iteration.js';
+import { list, listItem } from './iteration.js';
+import { addTask, input,tasks } from "./add.js";
+
 
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
 title.textContent = 'Today\'s To Do';
 pageContainer.appendChild(title);
-const input = document.createElement('input');
 pageContainer.appendChild(input);
 input.setAttribute('type', 'text');
 input.setAttribute('placeholder', 'add to your list...');
@@ -14,3 +15,5 @@ const remove = document.createElement('a');
 remove.setAttribute('href', '#');
 remove.textContent = 'Clear all completed';
 pageContainer.appendChild(remove);
+
+window.addEventListener("keypress", addTask);
