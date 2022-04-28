@@ -1,4 +1,4 @@
-import { listItem } from "./iteration";
+import { listItem } from './iteration.js';
 const saveLocal = (key,value) => {
     localStorage.setItem(key, JSON.stringify(value));
 }
@@ -16,7 +16,7 @@ const getFromLocal = (key) => {
 }
 
 const reload = () => {
-  const store = getFromLocal("tasks");
+  const store = getFromLocal('tasks');
   listItem(store);
 };
 export {saveLocal,getFromLocal,reload};
