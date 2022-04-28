@@ -1,7 +1,6 @@
 import './index.css';
-import { list } from './iteration.js';
+import { list, reload } from './iteration.js';
 import { addTask, input } from './add.js';
-import { reload } from './iteration.js';
 
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
