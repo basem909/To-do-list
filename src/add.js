@@ -1,4 +1,5 @@
-import { getFromLocal, reload, saveLocal } from './localstorage.js';
+import { reload } from './iteration.js';
+import { getFromLocal, saveLocal } from './localstorage.js';
 
 export const tasks = getFromLocal('tasks') || [];
 export const input = document.createElement('input');

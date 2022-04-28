@@ -9,14 +9,10 @@ const getFromLocal = (key) => {
   const storedTasks = [];
   if (stored) {
     for (let i = 0; i < stored.length; i += 1) {
-      storedTasks.push(stored[i]);
-    }
+      storedTasks.push(stored[i]);}
   }
   return storedTasks;
 };
 
-const reload = () => {
-  const store = getFromLocal('tasks');
-  listItem(store);
-};
-export { saveLocal, getFromLocal, reload };
+
+export { saveLocal, getFromLocal };
