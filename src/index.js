@@ -11,6 +11,7 @@ pageContainer.appendChild(title);
 pageContainer.appendChild(input);
 input.setAttribute("type", "text");
 input.setAttribute("placeholder", "add to your list...");
+input.classList.add('input')
 pageContainer.appendChild(list);
 const remove = document.createElement("a");
 remove.setAttribute("href", "#");
