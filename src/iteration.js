@@ -1,7 +1,7 @@
-export const list = document.createElement('ul');
-import { tasks } from './add.js';
 import { reload, saveLocal } from './localstorage.js';
 import { removeTask } from './remove.js';
+
+export const list = document.createElement("ul");
 list.classList.add('todo-container');
 export function listItem(tasks) {
   list.innerHTML = '';
@@ -9,7 +9,7 @@ export function listItem(tasks) {
     list.innerHTML += `<li class='list-item'><input type="checkbox"><input class ='edit' placeholder = '${tasks[i].description}' id ='${tasks[i].index}' disabled> <button class = "button"id ='${tasks[i].index}'>remove</button></li>`;
 
   }
-  const listbtn = document.querySelectorAll('.button')
+  const listbtn = document.querySelectorAll('.button');
   listbtn.forEach((btn) => {
     btn.addEventListener('click', removeTask);
   });
