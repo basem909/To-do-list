@@ -1,8 +1,7 @@
 import './index.css';
-import { list, listItem } from './iteration.js';
-import { addTask, input, tasks } from './add.js';
-import { getFromLocal, reload } from './localstorage';
-import { listbtn } from './remove';
+import { list} from './iteration.js';
+import { addTask, input } from './add.js';
+import { reload } from './localstorage.js';
 
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
@@ -11,7 +10,7 @@ pageContainer.appendChild(title);
 pageContainer.appendChild(input);
 input.setAttribute('type', 'text');
 input.setAttribute('placeholder', 'add to your list...');
-input.classList.add('input')
+input.classList.add('input');
 pageContainer.appendChild(list);
 const remove = document.createElement('a');
 remove.setAttribute('href', '#');
@@ -20,5 +19,4 @@ pageContainer.appendChild(remove);
 
 input.addEventListener('keypress', addTask);
 
-window.addEventListener('load', reload)
-
+window.addEventListener('load', reload);

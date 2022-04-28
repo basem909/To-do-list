@@ -1,4 +1,5 @@
 import { getFromLocal, reload, saveLocal } from './localstorage.js';
+
 export const tasks = getFromLocal('tasks') || [];
 export const input = document.createElement('input');
 
