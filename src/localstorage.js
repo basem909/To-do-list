@@ -17,7 +17,6 @@ const getFromLocal = (key) => {
 
 const reload = () => {
   const store = getFromLocal("tasks");
-  console.log(store);
   listItem(store);
 };
 export {saveLocal,getFromLocal,reload};

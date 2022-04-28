@@ -2,6 +2,7 @@ import "./index.css";
 import { list, listItem } from "./iteration.js";
 import { addTask, input, tasks } from "./add.js";
 import { getFromLocal, reload } from "./localstorage";
+import { listbtn } from "./remove";
 
 const pageContainer = document.querySelector(".page-container");
 const title = document.createElement("h1");
@@ -19,3 +20,4 @@ pageContainer.appendChild(remove);
 input.addEventListener("keypress", addTask);
 
 window.addEventListener('load', reload)
+

@@ -1,5 +1,5 @@
 import { list, listItem } from "./iteration.js";
-import { getFromLocal, saveLocal } from "./localstorage.js";
+import { getFromLocal, reload, saveLocal } from "./localstorage.js";
 export let tasks = getFromLocal('tasks')||[];
 export const input = document.createElement("input");
 
@@ -13,7 +13,7 @@ export const addTask = (e) => {
 
     tasks.push(f);
     saveLocal("tasks", tasks);
-    listItem(tasks);
+    reload();
     input.value = "";
   }
 };
