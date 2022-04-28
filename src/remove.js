@@ -1,13 +1,12 @@
-import { getFromLocal, saveLocal, reload } from "./localstorage";
+import { getFromLocal, saveLocal, reload } from './localstorage.js';
 
 export const removeTask = (e) => {
-  let tasklist = getFromLocal("tasks");
+  const tasklist = getFromLocal('tasks');
   tasklist.splice(e.target.id, 1);
   for (let i = 0; i < tasklist.length; i += 1) {
     tasklist[i].index = i;
   }
-  console.log(tasklist);
-  saveLocal("tasks", tasklist);
+  saveLocal('tasks', tasklist);
   reload();
   window.location.reload();
 };
