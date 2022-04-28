@@ -50,6 +50,8 @@ li {
   border: none;
   border-bottom: 1px solid lightgray;
   font-size: 2vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 a {

@@ -1,5 +1,6 @@
 import { list, listItem } from "./iteration.js";
-export const tasks = [];
+import { getFromLocal, saveLocal } from "./localstorage.js";
+export let tasks = getFromLocal('tasks')||[];
 export const input = document.createElement("input");
 
 export const addTask = (e) => {
@@ -11,8 +12,9 @@ export const addTask = (e) => {
     };
 
     tasks.push(f);
-    console.log(tasks);
-    listItem();
-    input.value = '';
+    saveLocal("tasks", tasks);
+    listItem(tasks);
+    input.value = "";
   }
 };
+
