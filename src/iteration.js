@@ -2,29 +2,27 @@ import { saveLocal, getFromLocal } from './localstorage.js';
 
 export const list = document.createElement('ul');
 list.classList.add('todo-container');
-
-export const reload = () => {
-  const store = getFromLocal("tasks");
-  listItem(store);
-};
-
 export function listItem(tasks) {
   list.innerHTML = '';
+  const reload = () => {
+    const store = getFromLocal('tasks');
+    listItem(store);
+  };
   for (let i = 0; i < tasks.length; i += 1) {
     list.innerHTML += `<li class='list-item'><input type="checkbox"><input class ='edit' placeholder = '${tasks[i].description}' id ='${tasks[i].index}' disabled> <button class = "button"id ='${tasks[i].index}'>remove</button></li>`;
   }
   const listbtn = document.querySelectorAll('.button');
   listbtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-  const tasklist = getFromLocal('tasks');
-  tasklist.splice(e.target.id, 1);
-  for (let i = 0; i < tasklist.length; i += 1) {
-    tasklist[i].index = i;
-  }
-  saveLocal('tasks', tasklist);
-  reload();
-  window.location.reload();
-});
+      const tasklist = getFromLocal('tasks');
+      tasklist.splice(e.target.id, 1);
+      for (let i = 0; i < tasklist.length; i += 1) {
+        tasklist[i].index = i;
+      }
+      saveLocal('tasks', tasklist);
+      reload();
+      window.location.reload();
+    });
   });
   const editInput = document.querySelectorAll('.edit');
   const clickTarget = document.querySelectorAll('li');
@@ -52,3 +50,8 @@ export function listItem(tasks) {
   });
   return list;
 }
+
+export const reload = () => {
+  const store = getFromLocal('tasks');
+  listItem(store);
+};
