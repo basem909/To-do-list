@@ -1,6 +1,6 @@
 import { saveLocal, getFromLocal } from './localstorage.js';
 
-const _ = require("lodash");
+const _ = require('lodash');
 
 export const remove = document.createElement('a');
 export const list = document.createElement('ul');
@@ -63,28 +63,24 @@ export function listItem(tasks) {
   const check = document.querySelectorAll('.check');
   check.forEach((checkbox) => {
     checkbox.addEventListener('change', (e) => {
-      if (tasks[e.target.id - 1].completed == false) {
+      if (tasks[e.target.id - 1].completed === false) {
         tasks[e.target.id - 1].completed = true;
         saveLocal('tasks', tasks);
         reload();
-        window.location.reload;
       } else {
         tasks[e.target.id - 1].completed = false;
         saveLocal('tasks', tasks);
         reload();
-        window.location.reload;
       }
     });
   });
   remove.addEventListener('click', () => {
-    console.log(tasks);
     const newtasks = _.filter(tasks, function (o) {
       return !o.completed;
     });
     for (let i = 0; i < newtasks.length; i += 1) {
       newtasks[i].index = i + 1;
     }
-    console.log(newtasks);
     saveLocal('tasks', newtasks);
     reload;
     window.location.reload();
