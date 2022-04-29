@@ -1,5 +1,7 @@
 import { saveLocal, getFromLocal } from './localstorage.js';
 
+const _ = require("lodash");
+
 export const remove = document.createElement('a');
 export const list = document.createElement('ul');
 list.classList.add('todo-container');

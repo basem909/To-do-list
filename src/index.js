@@ -1,9 +1,8 @@
 import './index.css';
 import { list, reload, remove } from './iteration.js';
-import { addTask, input, tasks } from './add.js';
-import checkboxChange from './checkbox';
+import { addTask, input } from './add.js';
+import checkboxChange from './checkbox.js';
 
-const _ = require('lodash');
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
 title.textContent = 'Today`s To Do';
