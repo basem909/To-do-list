@@ -1,6 +1,7 @@
 import './index.css';
 import { list, reload } from './iteration.js';
 import { addTask, input } from './add.js';
+import { checkboxChange } from './checkbox';
 
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
@@ -19,3 +20,8 @@ pageContainer.appendChild(remove);
 input.addEventListener('keypress', addTask);
 
 window.addEventListener('load', reload);
+
+  const check = document.querySelectorAll(".check");
+  check.forEach((checkbox) => {
+    checkbox.addEventListener("change", checkboxChange);
+  });

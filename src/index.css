@@ -72,3 +72,9 @@ input {
   border: none;
   background-color: inherit;
 }
+
+.edit{
+  font-weight: bold;
+  color: black;
+  font-size: 1.5vw;
+}
