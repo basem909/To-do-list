@@ -22,7 +22,7 @@ export function listItem(tasks) {
       tasks[i].index
     }'>remove</button></li>`;
   }
-  const listbtn = document.querySelectorAll('.button');
+  const listbtn = document.querySelectorAll(".button");
   listbtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const tasklist = getFromLocal('tasks');
@@ -75,7 +75,7 @@ export function listItem(tasks) {
     });
   });
   remove.addEventListener('click', () => {
-    const newtasks = _.filter(tasks,  (o) => {
+    const newtasks = _.filter(tasks, (o) => {
       return !o.completed;
     });
     for (let i = 0; i < newtasks.length; i += 1) {
