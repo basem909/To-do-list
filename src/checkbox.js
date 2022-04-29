@@ -1,9 +1,9 @@
-import { tasks } from './add';
-import { reload } from './iteration';
-import { saveLocal } from './localstorage';
+import { tasks } from './add.js';
+import { reload } from './iteration.js';
+import { saveLocal } from './localstorage.js';
 
- const checkboxChange = (e) => {
-  if (tasks[e.target.id - 1].completed == false) {
+const checkboxChange = (e) => {
+  if (tasks[e.target.id - 1].completed === false) {
     tasks[e.target.id - 1].completed = true;
     saveLocal('tasks', tasks);
     reload();
