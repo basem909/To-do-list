@@ -15,7 +15,7 @@ export function listItem(tasks) {
     list.innerHTML += `<li class='list-item'><input id='${
       tasks[i].index
     }' class='check' type="checkbox" ${
-      tasks[i].completed ? "checked" : ""
+      tasks[i].completed ? 'checked' : ''
     } ><input class ='edit' placeholder = '${tasks[i].description}' id ='${
       tasks[i].index
     }' disabled> <button class = "button"id ='${
@@ -75,14 +75,14 @@ export function listItem(tasks) {
     });
   });
   remove.addEventListener('click', () => {
-    const newtasks = _.filter(tasks, function (o) {
+    const newtasks = _.filter(tasks,  (o) => {
       return !o.completed;
     });
     for (let i = 0; i < newtasks.length; i += 1) {
       newtasks[i].index = i + 1;
     }
     saveLocal('tasks', newtasks);
-    reload;
+    reload();
     window.location.reload();
   });
   return list;
