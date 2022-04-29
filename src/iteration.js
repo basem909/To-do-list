@@ -15,9 +15,9 @@ export function listItem(tasks) {
   listbtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const tasklist = getFromLocal('tasks');
-      tasklist.splice(e.target.id, 1);
+      tasklist.splice(e.target.id - 1, 1);
       for (let i = 0; i < tasklist.length; i += 1) {
-        tasklist[i].index = i;
+        tasklist[i].index = i + 1;
       }
       saveLocal('tasks', tasklist);
       reload();
@@ -42,7 +42,7 @@ export function listItem(tasks) {
         clickTarget.forEach((editarea) => {
           editarea.style.backgroundColor = 'white';
         });
-        tasks[e.target.id].description = editput.value;
+        tasks[e.target.id - 1].description = editput.value;
         saveLocal('tasks', tasks);
         reload();
       }

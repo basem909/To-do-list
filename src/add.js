@@ -7,7 +7,7 @@ export const input = document.createElement('input');
 export const addTask = (e) => {
   if (e.key === 'Enter') {
     const f = {
-      index: tasks.length,
+      index: tasks.length + 1,
       description: input.value,
       completed: false,
     };
