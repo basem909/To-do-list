@@ -74,10 +74,11 @@ export function listItem(tasks) {
       }
     });
   });
+  function del(o) {
+    return !o.completed;
+  }
   remove.addEventListener('click', () => {
-    const newtasks = _.filter(tasks, function del(o) {
-      return !o.completed; 
-    });
+    const newtasks = _.filter(tasks, del(o));
     for (let i = 0; i < newtasks.length; i += 1) {
       newtasks[i].index = i + 1;
     }
