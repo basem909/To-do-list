@@ -1,5 +1,8 @@
 import { saveLocal, getFromLocal } from './localstorage.js';
 
+const _ = require('lodash');
+
+export const remove = document.createElement('a');
 export const list = document.createElement('ul');
 list.classList.add('todo-container');
 export function listItem(tasks) {
@@ -9,7 +12,15 @@ export function listItem(tasks) {
     listItem(store);
   };
   for (let i = 0; i < tasks.length; i += 1) {
-    list.innerHTML += `<li class='list-item'><input type="checkbox"><input class ='edit' placeholder = '${tasks[i].description}' id ='${tasks[i].index}' disabled> <button class = "button"id ='${tasks[i].index}'>remove</button></li>`;
+    list.innerHTML += `<li class='list-item'><input id='${
+      tasks[i].index
+    }' class='check' type="checkbox" ${
+      tasks[i].completed ? 'checked' : ''
+    } ><input class ='edit' placeholder = '${tasks[i].description}' id ='${
+      tasks[i].index
+    }' disabled> <button class = "button"id ='${
+      tasks[i].index
+    }'>remove</button></li>`;
   }
   const listbtn = document.querySelectorAll('.button');
   listbtn.forEach((btn) => {
@@ -47,6 +58,30 @@ export function listItem(tasks) {
         reload();
       }
     });
+  });
+
+  const check = document.querySelectorAll('.check');
+  check.forEach((checkbox) => {
+    checkbox.addEventListener('change', (e) => {
+      if (tasks[e.target.id - 1].completed === false) {
+        tasks[e.target.id - 1].completed = true;
+        saveLocal('tasks', tasks);
+        reload();
+      } else {
+        tasks[e.target.id - 1].completed = false;
+        saveLocal('tasks', tasks);
+        reload();
+      }
+    });
+  });
+  remove.addEventListener('click', () => {
+    const newtasks = _.filter(tasks, (o) => !o.completed);
+    for (let i = 0; i < newtasks.length; i += 1) {
+      newtasks[i].index = i + 1;
+    }
+    saveLocal('tasks', newtasks);
+    reload();
+    window.location.reload();
   });
   return list;
 }

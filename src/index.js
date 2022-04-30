@@ -1,6 +1,7 @@
 import './index.css';
-import { list, reload } from './iteration.js';
+import { list, reload, remove } from './iteration.js';
 import { addTask, input } from './add.js';
+import checkboxChange from './checkbox.js';
 
 const pageContainer = document.querySelector('.page-container');
 const title = document.createElement('h1');
@@ -11,7 +12,6 @@ input.setAttribute('type', 'text');
 input.setAttribute('placeholder', 'add to your list...');
 input.classList.add('input');
 pageContainer.appendChild(list);
-const remove = document.createElement('a');
 remove.setAttribute('href', '#');
 remove.textContent = 'Clear all completed';
 pageContainer.appendChild(remove);
@@ -19,3 +19,8 @@ pageContainer.appendChild(remove);
 input.addEventListener('keypress', addTask);
 
 window.addEventListener('load', reload);
+
+const check = document.querySelectorAll('.check');
+check.forEach((checkbox) => {
+  checkbox.addEventListener('change', checkboxChange);
+});
