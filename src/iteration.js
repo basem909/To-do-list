@@ -75,11 +75,7 @@ export function listItem(tasks) {
     });
   });
   remove.addEventListener('click', () => {
-    const newtasks = _.filter(tasks, (o) => {
-      return !o.completed;
-      let a;
-      a = 1;
-    });
+    const newtasks = _.filter(tasks, (o) => {return !o.completed; });
     for (let i = 0; i < newtasks.length; i += 1) {
       newtasks[i].index = i + 1;
     }
