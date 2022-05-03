@@ -1,5 +1,6 @@
-/* eslint disable*/
+/* eslint disable */
 import { saveLocal, getFromLocal } from './localstorage.js';
+import { tasks } from './add.js';
 
 const _ = require('lodash');
 
@@ -16,7 +17,7 @@ export function listItem(tasks) {
     list.innerHTML += `<li class='list-item'><input id='${
       tasks[i].index
     }' class='check' type='checkbox' ${
-      tasks[i].completed ? "checked" : ""
+      tasks[i].completed ? 'checked' : ''
     } ><input class ='edit' placeholder = '${tasks[i].description}' id ='${
       tasks[i].index
     }' disabled> <button class = 'button'id ='${
