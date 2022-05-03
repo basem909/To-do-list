@@ -89,5 +89,3 @@ export const reload = () => {
   const store = getFromLocal('tasks');
   listItem(store);
 };
-
-
