@@ -14,11 +14,11 @@ export function listItem(tasks) {
   for (let i = 0; i < tasks.length; i += 1) {
     list.innerHTML += `<li class='list-item'><input id='${
       tasks[i].index
-    }' class='check' type="checkbox" ${
+    }' class='check' type='checkbox' ${
       tasks[i].completed ? 'checked' : ''
     } ><input class ='edit' placeholder = '${tasks[i].description}' id ='${
       tasks[i].index
-    }' disabled> <button class = "button"id ='${
+    }' disabled> <button class = 'button'id ='${
       tasks[i].index
     }'>remove</button></li>`;
   }
@@ -85,7 +85,6 @@ export function listItem(tasks) {
   });
   return list;
 }
-
 export const reload = () => {
   const store = getFromLocal('tasks');
   listItem(store);
