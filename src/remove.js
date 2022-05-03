@@ -1,5 +1,10 @@
-import { tasks } from './add.js' 
-  const listbtn = document.querySelector('.button');
+import { tasks } from './add.js';
+import { saveLocal } from './localstorage.js';
+import { reload } from './iteration.js';
+
+const _ = require('lodash');
+
+const listbtn = document.querySelector('.button');
 export default listbtn;
 const checkboxChange = (e) => {
   if (tasks[e.target.id - 1].completed === false) {

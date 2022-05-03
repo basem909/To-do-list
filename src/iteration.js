@@ -1,4 +1,3 @@
-/* eslint disable */
 import { saveLocal, getFromLocal } from './localstorage.js';
 
 const _ = require('lodash');
