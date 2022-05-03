@@ -5,6 +5,26 @@ const _ = require('lodash');
 export const remove = document.createElement('a');
 export const list = document.createElement('ul');
 list.classList.add('todo-container');
+const checkboxChange = (e) => {
+  if (tasks[e.target.id - 1].completed === false) {
+    tasks[e.target.id - 1].completed = true;
+    saveLocal("tasks", tasks);
+    reload();
+  } else {
+    tasks[e.target.id - 1].completed = false;
+    saveLocal("tasks", tasks);
+    reload();
+  }
+};
+const removeCompleted = () => {
+  const newtasks = _.filter(tasks, (o) => !o.completed);
+  for (let i = 0; i < newtasks.length; i += 1) {
+    newtasks[i].index = i + 1;
+  }
+  saveLocal("tasks", newtasks);
+  reload();
+  window.location.reload();
+};
 export function listItem(tasks) {
   list.innerHTML = '';
   const reload = () => {
@@ -62,27 +82,17 @@ export function listItem(tasks) {
 
   const check = document.querySelectorAll('.check');
   check.forEach((checkbox) => {
-    checkbox.addEventListener('change', (e) => {
-      if (tasks[e.target.id - 1].completed === false) {
-        tasks[e.target.id - 1].completed = true;
-        saveLocal('tasks', tasks);
-        reload();
-      } else {
-        tasks[e.target.id - 1].completed = false;
-        saveLocal('tasks', tasks);
-        reload();
-      }
-    });
+    checkbox.addEventListener('change', checkboxChange);
   });
   remove.addEventListener('click', () => {
-    const newtasks = _.filter(tasks, (o) => !o.completed);
-    for (let i = 0; i < newtasks.length; i += 1) {
-      newtasks[i].index = i + 1;
-    }
-    saveLocal('tasks', newtasks);
-    reload();
-    window.location.reload();
-  });
+  const newtasks = _.filter(tasks, (o) => !o.completed);
+  for (let i = 0; i < newtasks.length; i += 1) {
+    newtasks[i].index = i + 1;
+  }
+  saveLocal("tasks", newtasks);
+  reload();
+  window.location.reload();
+});
   return list;
 }
 
