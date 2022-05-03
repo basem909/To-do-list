@@ -4,11 +4,11 @@ export default listbtn;
 const checkboxChange = (e) => {
   if (tasks[e.target.id - 1].completed === false) {
     tasks[e.target.id - 1].completed = true;
-    saveLocal("tasks", tasks);
+    saveLocal('tasks', tasks);
     reload();
   } else {
     tasks[e.target.id - 1].completed = false;
-    saveLocal("tasks", tasks);
+    saveLocal('tasks', tasks);
     reload();
   }
 };
@@ -18,7 +18,7 @@ const removeCompleted = () => {
   for (let i = 0; i < newtasks.length; i += 1) {
     newtasks[i].index = i + 1;
   }
-  saveLocal("tasks", newtasks);
+  saveLocal('tasks', newtasks);
   reload();
   window.location.reload();
 };
